@@ -16,11 +16,10 @@ object WordCount{
     val fileLines: RDD[String] = sc.textFile("data/input/words.txt")
 
     // 数据操作/转换
-    val words: RDD[String] = fileLines.flatMap(fileLines => {
-      fileLines.split(" ")
-    })
+    val words: RDD[String] = fileLines.flatMap(_.split(" "))
+    val wordAndOnes: RDD[(String, Int)] = words.map((_, 1))
 
-    println(words.toString())
+
 
   }
 }

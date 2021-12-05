@@ -3,8 +3,14 @@ package com.yankaizhang.bootspark
 import java.util.{Date, Locale}
 import java.text.DateFormat
 
+import org.slf4j.LoggerFactory
+
 object ScalaApplication {
+
+  private val log = LoggerFactory.getLogger(this.getClass)
+
   def main(args: Array[String]): Unit = {
+    log.info("hello")
     println("hello!")
     val now = new Date
     val df = DateFormat.getDateInstance(DateFormat.LONG, Locale.CHINA)
