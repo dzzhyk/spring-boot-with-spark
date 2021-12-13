@@ -1,16 +1,16 @@
 package com.yankaizhang.bootspark;
 
-import java.lang.annotation.*;
+import java.lang.annotation.ElementType;
+import java.lang.annotation.Retention;
+import java.lang.annotation.RetentionPolicy;
+import java.lang.annotation.Target;
 
 /**
- * 为方法注入Spark-MongoDB连接的上下文
  * @author dzzhyk
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Target({ElementType.METHOD})
-@Documented
+@Target(ElementType.METHOD)
 public @interface InjectSparkContext {
-
     String master() default "local[*]";
     String appName() default "movielikes";
 
